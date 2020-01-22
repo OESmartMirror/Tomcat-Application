@@ -15,6 +15,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
+          <unit-entry name="a.xml" value="db8cf92e-7a4b-4d31-b7f7-b2c90d459544" />
           <unit-entry name="com:lookingglass:model:hibernate.cfg.xml" value="db8cf92e-7a4b-4d31-b7f7-b2c90d459544" />
         </datasource-map>
         <naming-strategy-map />

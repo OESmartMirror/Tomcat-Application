@@ -1,15 +1,16 @@
 package com.lookingglass.model;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "users_parameters", schema = "datatable")
 public class UsersParametersEntity {
-    private int id;
+    private Integer id;
+    private Integer userId;
     private String parameterName;
     private String parameterValue;
     private UsersEntity usersByUserId;
+
 
     public UsersParametersEntity()
     {
@@ -24,12 +25,22 @@ public class UsersParametersEntity {
 
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Basic
+    @Column(name = "user_id", nullable = true)
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     @Basic
@@ -56,15 +67,26 @@ public class UsersParametersEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         UsersParametersEntity that = (UsersParametersEntity) o;
-        return id == that.id &&
-                Objects.equals(parameterName, that.parameterName) &&
-                Objects.equals(parameterValue, that.parameterValue);
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (userId != null ? !userId.equals(that.userId) : that.userId != null) return false;
+        if (parameterName != null ? !parameterName.equals(that.parameterName) : that.parameterName != null)
+            return false;
+        if (parameterValue != null ? !parameterValue.equals(that.parameterValue) : that.parameterValue != null)
+            return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, parameterName, parameterValue);
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (userId != null ? userId.hashCode() : 0);
+        result = 31 * result + (parameterName != null ? parameterName.hashCode() : 0);
+        result = 31 * result + (parameterValue != null ? parameterValue.hashCode() : 0);
+        return result;
     }
 
     @ManyToOne

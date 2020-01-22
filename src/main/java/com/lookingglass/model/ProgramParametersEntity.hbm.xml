@@ -8,11 +8,17 @@
         <id name="id">
             <column name="id" sql-type="int(11)"/>
         </id>
+        <property name="programId">
+            <column name="program_id" sql-type="int(11)" not-null="true"/>
+        </property>
         <property name="parameterName">
             <column name="parameter_name" sql-type="varchar(20)" length="20"/>
         </property>
         <property name="parameterValue">
             <column name="parameter_value" sql-type="varchar(100)" length="100"/>
         </property>
+        <many-to-one name="programsByProgramId" class="com.lookingglass.model.ProgramsEntity">
+            <column name="program_id" not-null="true"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

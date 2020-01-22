@@ -1,34 +1,34 @@
 package com.lookingglass.model;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "program_parameters", schema = "datatable")
 public class ProgramParametersEntity {
-    private int id;
+    private Integer id;
+    private Integer programId;
     private String parameterName;
     private String parameterValue;
-
-    public ProgramParametersEntity()
-    {
-
-    }
-
-    public ProgramParametersEntity(String _parameterName, String _parameterValue)
-    {
-        this.parameterName = _parameterName;
-        this.parameterValue = _parameterValue;
-    }
+    private ProgramsEntity programsByProgramId;
 
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Basic
+    @Column(name = "program_id", nullable = true)
+    public Integer getProgramId() {
+        return programId;
+    }
+
+    public void setProgramId(Integer programId) {
+        this.programId = programId;
     }
 
     @Basic
@@ -55,14 +55,35 @@ public class ProgramParametersEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         ProgramParametersEntity that = (ProgramParametersEntity) o;
-        return id == that.id &&
-                Objects.equals(parameterName, that.parameterName) &&
-                Objects.equals(parameterValue, that.parameterValue);
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (programId != null ? !programId.equals(that.programId) : that.programId != null) return false;
+        if (parameterName != null ? !parameterName.equals(that.parameterName) : that.parameterName != null)
+            return false;
+        if (parameterValue != null ? !parameterValue.equals(that.parameterValue) : that.parameterValue != null)
+            return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, parameterName, parameterValue);
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (programId != null ? programId.hashCode() : 0);
+        result = 31 * result + (parameterName != null ? parameterName.hashCode() : 0);
+        result = 31 * result + (parameterValue != null ? parameterValue.hashCode() : 0);
+        return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "program_id", referencedColumnName = "id")
+    public ProgramsEntity getProgramsByProgramId() {
+        return programsByProgramId;
+    }
+
+    public void setProgramsByProgramId(ProgramsEntity programsByProgramId) {
+        this.programsByProgramId = programsByProgramId;
     }
 }
