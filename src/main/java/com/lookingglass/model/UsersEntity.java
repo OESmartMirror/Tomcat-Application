@@ -3,6 +3,10 @@ package com.lookingglass.model;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
+
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.lookingglass.utils.Utils;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,10 +20,19 @@ import java.util.stream.Stream;
 public class UsersEntity {
     private Integer id;
     private String label;
-    private Collection<PicturesEntity> picturesById;
+    private transient  Collection<PicturesEntity> picturesById;//to leave this field out of serialization
     private Collection<ProgramsEntity> programsById;
     private Collection<UsersParametersEntity> usersParametersById;
 
+   private Gson gson = new GsonBuilder()
+            .disableHtmlEscaping()
+            .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+            .setPrettyPrinting()
+            .serializeNulls()
+            .create();
+
+
+    //TODO add log4j, and gson functionality
     public UsersEntity()
     {
 
@@ -36,7 +49,7 @@ public class UsersEntity {
         }
     }
 
-    public void AddPicture(PicturesEntity _picture)
+    public void addPicture(PicturesEntity _picture)
     {
         if (!this.picturesById.contains(_picture))
         {
@@ -44,7 +57,7 @@ public class UsersEntity {
         }
     }
 
-    public void AddPictures(List<PicturesEntity> _pictures)
+    public void addPictures(List<PicturesEntity> _pictures)
     {
         for(PicturesEntity pic : _pictures)
         {
@@ -55,7 +68,7 @@ public class UsersEntity {
         }
     }
 
-    public void AddPictures( String _pathOfFolder)
+    public void addPictures( String _pathOfFolder)
     {
         try (Stream<Path> walk = Files.walk(Paths.get(_pathOfFolder)))
         {
@@ -71,7 +84,7 @@ public class UsersEntity {
         }
     }
 
-    public void AddParameter(UsersParametersEntity _parameter)
+    public void addParameter(UsersParametersEntity _parameter)
     {
         if (!this.usersParametersById.contains(_parameter))
         {
@@ -79,7 +92,7 @@ public class UsersEntity {
         }
     }
 
-    public void AddParameter(String _paramName, String _paramValue)
+    public void addParameter(String _paramName, String _paramValue)
     {
         UsersParametersEntity temp = new UsersParametersEntity(_paramName,_paramValue);
         if (!this.usersParametersById.contains(temp))
@@ -88,7 +101,7 @@ public class UsersEntity {
         }
     }
 
-    public void AddParameters(List<UsersParametersEntity> _parameters)
+    public void addParameters(List<UsersParametersEntity> _parameters)
     {
         for (UsersParametersEntity param : _parameters)
         {
@@ -99,7 +112,7 @@ public class UsersEntity {
         }
     }
 
-    public void AddProgram(ProgramsEntity _program)
+    public void addProgram(ProgramsEntity _program)
     {
         if (!this.programsById.contains(_program))
         {
@@ -107,7 +120,7 @@ public class UsersEntity {
         }
     }
 
-    public void AddProgram(List<ProgramsEntity> _programs)
+    public void addProgram(List<ProgramsEntity> _programs)
     {
         for(ProgramsEntity prog : _programs)
         {
@@ -118,13 +131,28 @@ public class UsersEntity {
         }
     }
 
-    public void AddProgram(String _programName)
+    public void addProgram(String _programName)
     {
         ProgramsEntity temp = new ProgramsEntity(_programName);
         if(!this.programsById.contains(temp))
         {
             this.programsById.add(temp);
         }
+    }
+
+    public String userAsJson()
+    {
+        return gson.toJson(this);
+    }
+
+    public String usersParametersAsJson()
+    {
+        return gson.toJson(this.usersParametersById);
+    }
+
+    public String usersProgramsAsJson()
+    {
+        return gson.toJson(this.programsById);
     }
 
     @Id

@@ -2,6 +2,7 @@ package com.lookingglass.model;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "programs", schema = "datatable")
@@ -20,6 +21,34 @@ public class ProgramsEntity {
     public ProgramsEntity(String _name)
     {
         this.name = _name;
+    }
+
+    public void addParameters( ProgramParametersEntity _parameter)
+    {
+        if(!this.programParametersById.contains(_parameter))
+        {
+            this.programParametersById.add(_parameter);
+        }
+    }
+
+    public void addParameters(String _paramName, String _paramValue)
+    {
+        ProgramParametersEntity temp = new ProgramParametersEntity(_paramName,_paramValue);
+        if (!this.programParametersById.contains(temp))
+        {
+            this.programParametersById.add(temp);
+        }
+    }
+
+    public void addParameters(List<ProgramParametersEntity> _parameters)
+    {
+        for(ProgramParametersEntity param : _parameters)
+        {
+            if (!this.programParametersById.contains(param))
+            {
+                this.programParametersById.add(param);
+            }
+        }
     }
 
     @Id
