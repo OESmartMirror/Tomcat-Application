@@ -22,6 +22,13 @@ public class ProgramParametersEntity {
         this.parameterValue = _paramValue;
     }
 
+    public ProgramParametersEntity(ProgramsEntity _programsByProgramId, String _paramName, String _paramValue)
+    {
+        this.parameterName = _paramName;
+        this.parameterValue = _paramValue;
+        this.programsByProgramId = _programsByProgramId;
+    }
+
     @Id
     @Column(name = "id", nullable = false)
     public Integer getId() {

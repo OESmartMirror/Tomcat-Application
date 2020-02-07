@@ -1,2 +1,7 @@
 
-dsquid:S1126C"AReplace this if-then-else statement by a single return statement.(­«•šşÿÿÿÿ8Û¦÷Êü-
+usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¡äôşÿÿÿÿ8¸ì‰ ı-
+psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬„„Ú8¤£Õ.
+psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬„„Ú8¤£Õ.
+usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¡äôşÿÿÿÿ8¸ì‰ ı-
+dsquid:S1126T"AReplace this if-then-else statement by a single return statement.(­«•šşÿÿÿÿ8Û¦÷Êü-
+psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬„„Ú8¤£Õ.

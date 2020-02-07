@@ -23,6 +23,13 @@ public class UsersParametersEntity {
         this.parameterValue = _parameterValue;
     }
 
+    public UsersParametersEntity(UsersEntity _usersByUserId,String _paramName, String _parameterValue)
+    {
+        this.parameterName = _paramName;
+        this.parameterValue = _parameterValue;
+        this.usersByUserId = _usersByUserId;
+    }
+
     @Id
     @Column(name = "id", nullable = false)
     public Integer getId() {

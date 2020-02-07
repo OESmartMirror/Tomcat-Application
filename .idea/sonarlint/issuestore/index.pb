@@ -83,3 +83,9 @@ D
 web/registration.jsp,f\7\f7ba727b4f5c4d55fadc3c65eadd92d654d15b66
 e
 5src/main/java/com/lookingglass/model/UsersEntity.java,2\8\28681358bbaa8adcef408aa51fe0147273a9f3de
+L
+web/WEB-INF/log4j.properties,f\b\fbdedeefe6bc8fb49be8a1b028b0e5e71e101d21
+I
+src/main/log4j.properties,9\3\9335a505bf5838e1fab38e12b55ddcf58f305882
+g
+7src/main/java/com/lookingglass/utils/HibernateUtil.java,2\5\2568499e112a7c23957d8c8c8cdad7c7bc1bbf08

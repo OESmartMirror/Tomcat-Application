@@ -1,2 +1,5 @@
 
-Psquid:S1135 "2Complete the task associated to this TODO comment.(´ı›´8Š‡¦üû-
+Gsquid:S1989)"$Add a "try/catch" block for "close".(ËÇÇÓûÿÿÿÿ8ÿÍ•×.
+Fsquid:S1148%"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÿÍ•×.
+hsquid:S2259)"EA "NullPointerException" could be thrown; "session" is nullable here.(ËÇÇÓûÿÿÿÿ8ÿÍ•×.
+Psquid:S1135E"2Complete the task associated to this TODO comment.(´ı›´8Š‡¦üû-

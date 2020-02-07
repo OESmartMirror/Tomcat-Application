@@ -6,6 +6,9 @@
   <session-factory>
     <property name="connection.url">jdbc:mariadb://192.168.0.103:3306/datatable</property>
     <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+    <property name="show_sql">true</property>
+    <property name="hibernate.connection.username">mirror</property>
+    <property name="hibernate.connection.password">mirror</property>
     <mapping class="com.lookingglass.model.PicturesEntity"/>
     <mapping resource="com/lookingglass/model/PicturesEntity.hbm.xml"/>
     <mapping class="com.lookingglass.model.ProgramParametersEntity"/>
@@ -16,6 +19,7 @@
     <mapping resource="com/lookingglass/model/UsersEntity.hbm.xml"/>
     <mapping class="com.lookingglass.model.UsersParametersEntity"/>
     <mapping resource="com/lookingglass/model/UsersParametersEntity.hbm.xml"/>
+
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

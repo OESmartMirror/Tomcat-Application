@@ -2,6 +2,7 @@ package com.lookingglass.model;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 @Entity
@@ -10,7 +11,7 @@ public class ProgramsEntity {
     private Integer id;
     private String name;
     private Integer userId;
-    private Collection<ProgramParametersEntity> programParametersById;
+    private Collection<ProgramParametersEntity> programParametersById = new HashSet();;
     private UsersEntity usersByUserId;
 
     public ProgramsEntity()
@@ -21,6 +22,12 @@ public class ProgramsEntity {
     public ProgramsEntity(String _name)
     {
         this.name = _name;
+    }
+
+    public ProgramsEntity(UsersEntity _usersByUserId, String _name)
+    {
+        this.name = _name;
+        this.usersByUserId = _usersByUserId;
     }
 
     public void addParameters( ProgramParametersEntity _parameter)

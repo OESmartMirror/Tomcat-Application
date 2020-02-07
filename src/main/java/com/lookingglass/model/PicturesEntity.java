@@ -24,6 +24,13 @@ public class PicturesEntity {
         this.timeStamp = new Timestamp(System.currentTimeMillis());
     }
 
+    public PicturesEntity(UsersEntity _usersByUserId, byte[] _arr)
+    {
+        this.picture = _arr;
+        this.timeStamp = new Timestamp(System.currentTimeMillis());
+        this.usersByUserId = _usersByUserId;
+    }
+
     @Id
     @Column(name = "id", nullable = false)
     public Integer getId() {
