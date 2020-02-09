@@ -1,5 +1,7 @@
 package com.lookingglass.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
@@ -59,6 +61,14 @@ public class ProgramsEntity {
     }
 
     @Id
+    @GeneratedValue(
+            strategy= GenerationType.AUTO,
+            generator="native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;

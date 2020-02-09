@@ -4,6 +4,7 @@ import com.lookingglass.model.UsersEntity;
 import com.lookingglass.utils.HibernateUtil;
 import com.lookingglass.utils.Utils;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,17 +23,27 @@ public class RegistrationServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     {
+
         Session session = null;
+        Transaction tx = null;
         UsersEntity tempUser = null;
         try
         {
             session = HibernateUtil.getInstance().getSession();
             try
             {
-                tempUser = new UsersEntity(getParameter("email",request));
-                tempUser.addParameter("firstName",getParameter("firstName",request));
-                tempUser.addParameter("lastName",getParameter("lastName",request));
-                tempUser.addParameter("password", Utils.getPasswordHash(getParameter("password",request)));
+                    tx = session.beginTransaction();
+                    try
+                    {
+                        tempUser = new UsersEntity(getParameter("email",request));
+                        tempUser.addParameter("firstName",getParameter("firstName",request));
+                        tempUser.addParameter("lastName",getParameter("lastName",request));
+                        tempUser.addParameter("password", Utils.getPasswordHash(getParameter("password",request)));
+                    }
+                    catch (Exception e3)
+                    {
+                        e3.printStackTrace();
+                    }
             }
             catch (Exception e2)
             {
@@ -40,7 +51,7 @@ public class RegistrationServlet extends HttpServlet
             }
             finally
             {
-                session.save(tempUser);
+                if(null != session) session.save(tempUser);
             }
         }
         catch (Exception e)
@@ -49,7 +60,9 @@ public class RegistrationServlet extends HttpServlet
         }
         finally
         {
-            session.close();
+            System.out.println(session.isConnected());
+            if(null != tx) tx.commit();
+            if(null != session) session.close();
         }
 
 

@@ -16,7 +16,7 @@ public class HibernateUtil
 
     private HibernateUtil()
     {
-        factory = getSessionFactory();
+
     }
 //maling the Hibernate SessionFactory object as singleton
 
@@ -27,12 +27,15 @@ public class HibernateUtil
         {
             try
             {
-                cfg = new Configuration().configure("/com/lookingglass/model/hibernate.cfg.xml");
+                cfg = new Configuration();
+                //cfg.configure("src/main/java/resources/hibernate.cfg.xml");
+                cfg.configure();
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
                 factory = cfg.buildSessionFactory(serviceRegistry);
             }
             catch (Exception e)
             {
+                System.out.println(e);
                 e.printStackTrace();
             }
 
@@ -43,7 +46,17 @@ public class HibernateUtil
     //@org.jetbrains.annotations.NotNull
     public static Session getSession() throws HibernateException
     {
-        Session session = factory.openSession();
+        factory = getSessionFactory();
+        Session session = null;
+        try
+        {
+            session = factory.openSession();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
         if (!session.isConnected())
         {
             reconnect();

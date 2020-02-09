@@ -17,9 +17,12 @@
         <datasource-map>
           <unit-entry name="a.xml" value="db8cf92e-7a4b-4d31-b7f7-b2c90d459544" />
           <unit-entry name="com:lookingglass:model:hibernate.cfg.xml" value="db8cf92e-7a4b-4d31-b7f7-b2c90d459544" />
+          <unit-entry name="web:WEB-INF:hibernate.cfg.xml" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/java/com/lookingglass/model/hibernate.cfg.xml" />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/web/WEB-INF/hibernate.cfg.xml" />
       </configuration>
     </facet>
   </component>
@@ -37,9 +40,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.30" level="application_server_libraries" />
     <orderEntry type="library" name="Hibernate 5.4.9-5.4.9" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
-    <orderEntry type="library" name="Maven: org.mariadb.jdbc:mariadb-java-client:1.1.7" level="project" />
-    <orderEntry type="library" name="Maven: net.java.dev.jna:jna:3.3.0" level="project" />
-    <orderEntry type="library" name="Maven: net.java.dev.jna:jna:platform:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mariadb.jdbc:mariadb-java-client:2.5.4" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.6" level="project" />
     <orderEntry type="library" name="Maven: org.mindrot:jbcrypt:0.4" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:5.4.9.Final" level="project" />
@@ -63,5 +64,6 @@
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:18.0.0" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.48" level="project" />
   </component>
 </module>

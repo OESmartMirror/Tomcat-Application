@@ -8,6 +8,9 @@
         <id name="id">
             <column name="id" sql-type="int(11)"/>
         </id>
+        <property name="userId">
+            <column name="user_id" sql-type="int(11)" not-null="true"/>
+        </property>
         <property name="parameterName">
             <column name="parameter_name" sql-type="varchar(20)" length="20"/>
         </property>

@@ -11,5 +11,23 @@
         <property name="label">
             <column name="label" sql-type="varchar(20)" length="20"/>
         </property>
+        <set name="picturesById" inverse="true">
+            <key>
+                <column name="user_id" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.lookingglass.model.PicturesEntity"/>
+        </set>
+        <set name="programsById" inverse="true">
+            <key>
+                <column name="user_id" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.lookingglass.model.ProgramsEntity"/>
+        </set>
+        <set name="usersParametersById" inverse="true">
+            <key>
+                <column name="user_id" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.lookingglass.model.UsersParametersEntity"/>
+        </set>
     </class>
 </hibernate-mapping>

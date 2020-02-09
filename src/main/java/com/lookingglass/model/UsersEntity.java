@@ -4,13 +4,16 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.lookingglass.utils.Utils;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -173,6 +176,14 @@ public class UsersEntity {
     }
 
     @Id
+    @GeneratedValue(
+            strategy= GenerationType.AUTO,
+            generator="native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;

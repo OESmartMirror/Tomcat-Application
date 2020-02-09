@@ -1,5 +1,7 @@
 package com.lookingglass.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Arrays;
@@ -32,6 +34,14 @@ public class PicturesEntity {
     }
 
     @Id
+    @GeneratedValue(
+            strategy= GenerationType.AUTO,
+            generator="native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;

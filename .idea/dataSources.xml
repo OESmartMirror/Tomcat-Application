@@ -15,15 +15,15 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="com:lookingglass:model:hibernate.cfg.xml/Hibernate" uuid="0559e6a7-3244-48e1-8fcb-36eaf9504def">
-      <driver-ref>mariadb</driver-ref>
+    <data-source source="LOCAL" name="com:lookingglass:model:hibernate.cfg.xml/Hibernate" uuid="f5d39066-c0bc-4e50-a0f6-da657ddbe93a">
+      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>Hibernate
 
 F:/Google Drive/_OE_MÉRNÖK_INFO/6. FÉLÉV/LookingGlass/src/main/java/com/lookingglass/model/hibernate.cfg.xml</remarks>
-      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://192.168.0.103:3306/datatable</jdbc-url>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://cst04.ddns.net:3306/datatable</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="yearIsDateType" value="false" />

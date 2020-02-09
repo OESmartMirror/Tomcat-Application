@@ -7,12 +7,6 @@ Y
 ).idea/libraries/Hibernate_5_4_9_5_4_9.xml,7\3\732e595824671fcdfe41b4aa2d0ebd172ea4968a
 ]
 -.idea/libraries/Maven__log4j_log4j_1_2_17.xml,2\d\2dfa7669c20c41273cb505d16f04d17467fb3330
-e
-5.idea/libraries/Maven__net_java_dev_jna_jna_3_3_0.xml,1\9\19502b24f20aa117d7f9fb12f3e55c883fb1be74
-n
->.idea/libraries/Maven__net_java_dev_jna_jna_platform_3_3_0.xml,6\b\6b465a5715b77dfa052571941f4b629d350e972c
-u
-E.idea/libraries/Maven__org_mariadb_jdbc_mariadb_java_client_1_1_7.xml,2\a\2a933bda42d28e48824e1c9cf8a15431660a9abe
 ê
 `out/artifacts/LookingGlass_war_exploded/WEB-INF/classes/com/lookingglass/model/hibernate.cfg.xml,4\a\4a5e104190c975bf99a47a7c54b9e2a70168d167
 ï
