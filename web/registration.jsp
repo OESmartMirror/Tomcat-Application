@@ -12,17 +12,17 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <script type="text/javascript">
-    $(function checkForm(registration) {
-        if (registration.email.value != registration.emailrpt.value)
+    $(function checkForm(registrationFrom) {
+        if (registrationFrom.email.value != registrationFrom.emailrpt.value)
         {
             alert("A két megadott e-mail cím nem egyezik meg!");
-            registration.email.focus();
+            registrationFrom.email.focus();
             return false;
         }
-        else if(registration.password.value != registration.passwordrpt.value)
+        else if(registrationFrom.password.value != registrationFrom.passwordrpt.value)
         {
             alert("A két megadott jelszó nem egyezik meg!");
-            registration.password.focus();
+            registrationFrom.password.focus();
             return false;
         }
         else
@@ -34,7 +34,7 @@
 
 <head>
     <title>Regisztráció</title>
-    <form class="form-horizontal" name="registration">
+    <form class="form-horizontal" name="registrationFrom" method="get" action="registration">
         <fieldset>
 
             <!-- Form Name -->
@@ -44,7 +44,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="firstname"></label>
                 <div class="col-md-4">
-                    <input id="firstname" name="firstname" type="text" placeholder="Kereszt név" class="form-control input-md" required="">
+                    <input id="firstName" name="firstName" type="text" placeholder="Kereszt név" class="form-control input-md" required="">
 
                 </div>
             </div>
@@ -53,7 +53,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="lastname"></label>
                 <div class="col-md-4">
-                    <input id="lastname" name="lastname" type="text" placeholder="Vezeték név" class="form-control input-md" required="">
+                    <input id="lastName" name="lastName" type="text" placeholder="Vezeték név" class="form-control input-md" required="">
 
                 </div>
             </div>
@@ -71,7 +71,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="emailrpt"></label>
                 <div class="col-md-4">
-                    <input id="emailrpt" name="emailrpt" type="text" placeholder="E-mail cím megismétlése" class="form-control input-md" required="">
+                    <input id="emailRpt" name="emailRpt" type="text" placeholder="E-mail cím megismétlése" class="form-control input-md" required="">
 
                 </div>
             </div>
@@ -89,7 +89,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="passwordrpt"></label>
                 <div class="col-md-4">
-                    <input id="passwordrpt" name="passwordrpt" type="password" placeholder="Jelszó megismétlése" class="form-control input-md" required="">
+                    <input id="passwordRpt" name="passwordRpt" type="password" placeholder="Jelszó megismétlése" class="form-control input-md" required="">
 
                 </div>
             </div>

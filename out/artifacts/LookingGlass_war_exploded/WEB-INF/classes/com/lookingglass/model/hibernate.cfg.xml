@@ -1,22 +1,29 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
-    "-//Hibernate/Hibernate Configuration DTD//EN"
-    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:mariadb://192.168.0.103:3306</property>
-    <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
-      <mapping class="com.lookingglass.model.PicturesEntity"/>
-      <mapping resource="com/lookingglass/model/PicturesEntity.hbm.xml"/>
-      <mapping class="com.lookingglass.model.ProgramParametersEntity"/>
-      <mapping resource="com/lookingglass/model/ProgramParametersEntity.hbm.xml"/>
-      <mapping class="com.lookingglass.model.ProgramsEntity"/>
-      <mapping resource="com/lookingglass/model/ProgramsEntity.hbm.xml"/>
-      <mapping class="com.lookingglass.model.UsersEntity"/>
-      <mapping resource="com/lookingglass/model/UsersEntity.hbm.xml"/>
-      <mapping class="com.lookingglass.model.UsersParametersEntity"/>
-      <mapping resource="com/lookingglass/model/UsersParametersEntity.hbm.xml"/>
-      <!-- <property name="connection.username"/> -->
+    <property name="hibernate.connection.url">jdbc:mysql://cst04.ddns.net:44444/datatable</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    <property name="connection.username">mirror</property>
+    <property name="connection.password">mirror</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping class="com.lookingglass.model.PicturesEntity"/>
+    <mapping resource="com/lookingglass/model/PicturesEntity.hbm.xml"/>
+    <mapping class="com.lookingglass.model.ProgramParametersEntity"/>
+    <mapping resource="com/lookingglass/model/ProgramParametersEntity.hbm.xml"/>
+    <mapping class="com.lookingglass.model.ProgramsEntity"/>
+    <mapping resource="com/lookingglass/model/ProgramsEntity.hbm.xml"/>
+    <mapping class="com.lookingglass.model.UsersEntity"/>
+    <mapping resource="com/lookingglass/model/UsersEntity.hbm.xml"/>
+    <mapping class="com.lookingglass.model.UsersParametersEntity"/>
+    <mapping resource="com/lookingglass/model/UsersParametersEntity.hbm.xml"/>
+    <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
     <!-- DB schema will be updated if needed -->

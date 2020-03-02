@@ -1,5 +1,7 @@
 package com.lookingglass.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
@@ -9,7 +11,6 @@ import java.util.List;
 public class ProgramsEntity {
     private Integer id;
     private String name;
-    private Integer userId;
     private Collection<ProgramParametersEntity> programParametersById;
     private UsersEntity usersByUserId;
 
@@ -19,6 +20,11 @@ public class ProgramsEntity {
     }
 
     public ProgramsEntity(String _name)
+    {
+        this.name = _name;
+    }
+
+    public ProgramsEntity(UsersEntity _usersByUserId, String _name)
     {
         this.name = _name;
     }
@@ -52,6 +58,14 @@ public class ProgramsEntity {
     }
 
     @Id
+    @GeneratedValue(
+            strategy= GenerationType.AUTO,
+            generator="native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;
@@ -71,16 +85,6 @@ public class ProgramsEntity {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "user_id", nullable = true)
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -90,7 +94,6 @@ public class ProgramsEntity {
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (userId != null ? !userId.equals(that.userId) : that.userId != null) return false;
 
         return true;
     }
@@ -99,7 +102,6 @@ public class ProgramsEntity {
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (userId != null ? userId.hashCode() : 0);
         return result;
     }
 
@@ -113,7 +115,7 @@ public class ProgramsEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
     public UsersEntity getUsersByUserId() {
         return usersByUserId;
     }

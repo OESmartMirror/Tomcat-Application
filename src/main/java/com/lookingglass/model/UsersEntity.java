@@ -1,17 +1,18 @@
 package com.lookingglass.model;
 
-import javax.persistence.*;
-import java.util.Collection;
-import java.util.List;
-
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.lookingglass.utils.Utils;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,19 +21,16 @@ import java.util.stream.Stream;
 public class UsersEntity {
     private Integer id;
     private String label;
-    private transient  Collection<PicturesEntity> picturesById;//to leave this field out of serialization
+    private Collection<PicturesEntity> picturesById;
     private Collection<ProgramsEntity> programsById;
     private Collection<UsersParametersEntity> usersParametersById;
-
-   private Gson gson = new GsonBuilder()
+    private Gson gson = new GsonBuilder()
             .disableHtmlEscaping()
             .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
             .setPrettyPrinting()
             .serializeNulls()
             .create();
 
-
-    //TODO add log4j, and gson functionality
     public UsersEntity()
     {
 
@@ -47,6 +45,11 @@ public class UsersEntity {
             this.label = String.valueOf(Math.abs(_email.hashCode()));
             this.usersParametersById.add(temp);
         }
+    }
+
+    public void addNewPicutre()
+    {
+
     }
 
     public void addPicture(PicturesEntity _picture)
@@ -112,6 +115,20 @@ public class UsersEntity {
         }
     }
 
+    public UsersParametersEntity getParameterByName(String _paramName)
+    {
+        UsersParametersEntity temp = new UsersParametersEntity();
+        temp = this.usersParametersById.stream().filter( param -> _paramName.equals(param.getParameterName())).findAny().orElse(null);
+        return temp;
+    }
+
+    public String returnUsersPassword()
+    {
+        return getParameterByName("password").getParameterValue();
+    }
+
+
+
     public void addProgram(ProgramsEntity _program)
     {
         if (!this.programsById.contains(_program))
@@ -156,6 +173,14 @@ public class UsersEntity {
     }
 
     @Id
+    @GeneratedValue(
+            strategy= GenerationType.AUTO,
+            generator="native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;

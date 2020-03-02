@@ -11,5 +11,17 @@
         <property name="name">
             <column name="name" sql-type="varchar(50)" length="50"/>
         </property>
+        <!--<property name="userId">
+            <column name="user_id" sql-type="int(11)" not-null="true"/>
+        </property>-->
+        <many-to-one name="usersByUserId" class="com.lookingglass.model.UsersEntity">
+            <column name="user_id" not-null="true"/>
+        </many-to-one>
+        <set name="programParametersById" inverse="true">
+            <key>
+                <column name="program_id" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.lookingglass.model.ProgramParametersEntity"/>
+        </set>
     </class>
 </hibernate-mapping>

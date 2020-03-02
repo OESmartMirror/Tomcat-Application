@@ -1,22 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:mariadb://192.168.0.103:3306/datatable</property>
+    <property name="connection.url">jdbc:mariadb://cst04.ddns.net:44444/datatable</property>
     <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
-    <mapping class="com.lookingglass.model.PicturesEntity"/>
-    <mapping resource="com/lookingglass/model/PicturesEntity.hbm.xml"/>
-    <mapping class="com.lookingglass.model.ProgramParametersEntity"/>
-    <mapping resource="com/lookingglass/model/ProgramParametersEntity.hbm.xml"/>
-    <mapping class="com.lookingglass.model.ProgramsEntity"/>
-    <mapping resource="com/lookingglass/model/ProgramsEntity.hbm.xml"/>
-    <mapping class="com.lookingglass.model.UsersEntity"/>
-    <mapping resource="com/lookingglass/model/UsersEntity.hbm.xml"/>
-    <mapping class="com.lookingglass.model.UsersParametersEntity"/>
-    <mapping resource="com/lookingglass/model/UsersParametersEntity.hbm.xml"/>
-    <!-- <property name="connection.username"/> -->
+      <mapping resource="com/lookingglass/model/PicturesEntity.hbm.xml"/>
+      <mapping class="com.lookingglass.model.PicturesEntity"/>
+      <mapping resource="com/lookingglass/model/ProgramParametersEntity.hbm.xml"/>
+      <mapping class="com.lookingglass.model.ProgramParametersEntity"/>
+      <mapping resource="com/lookingglass/model/ProgramsEntity.hbm.xml"/>
+      <mapping class="com.lookingglass.model.ProgramsEntity"/>
+      <mapping resource="com/lookingglass/model/UsersEntity.hbm.xml"/>
+      <mapping class="com.lookingglass.model.UsersEntity"/>
+      <mapping resource="com/lookingglass/model/UsersParametersEntity.hbm.xml"/>
+      <mapping class="com.lookingglass.model.UsersParametersEntity"/>
+      <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
     <!-- DB schema will be updated if needed -->

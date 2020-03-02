@@ -1,15 +1,16 @@
 package com.lookingglass.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "program_parameters", schema = "datatable")
 public class ProgramParametersEntity {
     private Integer id;
-    private Integer programId;
     private String parameterName;
     private String parameterValue;
-    private ProgramsEntity programsByProgramId;
+    private ProgramsEntity programsByProgramsId;
 
     public ProgramParametersEntity()
     {
@@ -22,7 +23,21 @@ public class ProgramParametersEntity {
         this.parameterValue = _paramValue;
     }
 
+    public ProgramParametersEntity(com.lookingglass.model.ProgramsEntity _programsByProgramId, String _paramName, String _paramValue)
+    {
+        this.parameterName = _paramName;
+        this.parameterValue = _paramValue;
+    }
+
     @Id
+    @GeneratedValue(
+            strategy= GenerationType.AUTO,
+            generator="native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;
@@ -30,16 +45,6 @@ public class ProgramParametersEntity {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @Basic
-    @Column(name = "program_id", nullable = true)
-    public Integer getProgramId() {
-        return programId;
-    }
-
-    public void setProgramId(Integer programId) {
-        this.programId = programId;
     }
 
     @Basic
@@ -70,7 +75,6 @@ public class ProgramParametersEntity {
         ProgramParametersEntity that = (ProgramParametersEntity) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (programId != null ? !programId.equals(that.programId) : that.programId != null) return false;
         if (parameterName != null ? !parameterName.equals(that.parameterName) : that.parameterName != null)
             return false;
         if (parameterValue != null ? !parameterValue.equals(that.parameterValue) : that.parameterValue != null)
@@ -82,19 +86,18 @@ public class ProgramParametersEntity {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (programId != null ? programId.hashCode() : 0);
         result = 31 * result + (parameterName != null ? parameterName.hashCode() : 0);
         result = 31 * result + (parameterValue != null ? parameterValue.hashCode() : 0);
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "program_id", referencedColumnName = "id")
+    @JoinColumn(name = "program_id", referencedColumnName = "id", nullable = false)
     public ProgramsEntity getProgramsByProgramId() {
-        return programsByProgramId;
+        return programsByProgramsId;
     }
 
-    public void setProgramsByProgramId(ProgramsEntity programsByProgramId) {
-        this.programsByProgramId = programsByProgramId;
+    public void setProgramsByProgramId(ProgramsEntity usersByUserId) {
+        this.programsByProgramsId = usersByUserId;
     }
 }

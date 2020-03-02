@@ -1,11 +1,18 @@
 package com.lookingglass.utils;
 
+import com.lookingglass.model.*;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.metadata.CollectionMetadata;
 import org.hibernate.service.ServiceRegistry;
+
+import java.util.Map;
+import java.util.Set;
 
 public class HibernateUtil
 {
@@ -27,11 +34,25 @@ public class HibernateUtil
         {
             try
             {
-                cfg = new Configuration();
+                /*cfg = new Configuration();
+                cfg.addAnnotatedClass(UsersEntity.class);
+                cfg.addAnnotatedClass(UsersParametersEntity.class);
+                cfg.addAnnotatedClass(PicturesEntity.class);
+                cfg.addAnnotatedClass(ProgramsEntity.class);
+                cfg.addAnnotatedClass(ProgramParametersEntity.class);
                 //cfg.configure("src/main/java/resources/hibernate.cfg.xml");
                 cfg.configure();
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
-                factory = cfg.buildSessionFactory(serviceRegistry);
+                Metadata metadata = new MetadataSources( serviceRegistry ).getMetadataBuilder().build();
+                //factory = cfg.buildSessionFactory(serviceRegistry);
+                factory = metadata.getSessionFactoryBuilder().build();*/
+                factory = new Configuration().configure().buildSessionFactory();
+                Map map = factory.getAllCollectionMetadata();
+                Set<Map.Entry<String,CollectionMetadata>> set = map.entrySet();
+                for (Map.Entry e : set) {
+                    System.out.println(e.getKey());
+                    System.out.println(e.getValue());
+                }
             }
             catch (Exception e)
             {
