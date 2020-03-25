@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="hibernate.connection.url">jdbc:mysql://cst04.ddns.net:3306/datatable</property>
+    <property name="hibernate.connection.url">jdbc:mysql://cst04.ddns.net:44444/datatable</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>

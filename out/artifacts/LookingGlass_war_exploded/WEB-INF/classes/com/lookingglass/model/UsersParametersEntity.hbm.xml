@@ -8,9 +8,6 @@
         <id name="id">
             <column name="id" sql-type="int(11)"/>
         </id>
-        <property name="userId">
-            <column name="user_id" sql-type="int(11)" not-null="true"/>
-        </property>
         <property name="parameterName">
             <column name="parameter_name" sql-type="varchar(20)" length="20"/>
         </property>
@@ -18,7 +15,7 @@
             <column name="parameter_value" sql-type="varchar(100)" length="100"/>
         </property>
         <many-to-one name="usersByUserId" class="com.lookingglass.model.UsersEntity">
-            <column name="user_id" not-null="true"/>
+            <column name="user_id"/>
         </many-to-one>
     </class>
 </hibernate-mapping>

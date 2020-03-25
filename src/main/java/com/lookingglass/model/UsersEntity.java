@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,9 +22,9 @@ import java.util.stream.Stream;
 public class UsersEntity {
     private Integer id;
     private String label;
-    private Collection<PicturesEntity> picturesById;
-    private Collection<ProgramsEntity> programsById;
-    private Collection<UsersParametersEntity> usersParametersById;
+    private Collection<PicturesEntity> picturesById = new ArrayList<>();
+    private Collection<ProgramsEntity> programsById = new ArrayList<>();
+    private Collection<UsersParametersEntity> usersParametersById = new ArrayList<>();
     private Gson gson = new GsonBuilder()
             .disableHtmlEscaping()
             .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
@@ -38,13 +39,9 @@ public class UsersEntity {
 
     public UsersEntity(String _email)
     {
+        this.label = String.valueOf(Math.abs(_email.hashCode()));
         UsersParametersEntity temp = new UsersParametersEntity("E-mail",_email);
-
-        if (!this.usersParametersById.contains(temp))
-        {
-            this.label = String.valueOf(Math.abs(_email.hashCode()));
-            this.usersParametersById.add(temp);
-        }
+        this.usersParametersById.add(temp);
     }
 
     public void addNewPicutre()

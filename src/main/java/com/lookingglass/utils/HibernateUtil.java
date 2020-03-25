@@ -47,12 +47,6 @@ public class HibernateUtil
                 //factory = cfg.buildSessionFactory(serviceRegistry);
                 factory = metadata.getSessionFactoryBuilder().build();*/
                 factory = new Configuration().configure().buildSessionFactory();
-                Map map = factory.getAllCollectionMetadata();
-                Set<Map.Entry<String,CollectionMetadata>> set = map.entrySet();
-                for (Map.Entry e : set) {
-                    System.out.println(e.getKey());
-                    System.out.println(e.getValue());
-                }
             }
             catch (Exception e)
             {

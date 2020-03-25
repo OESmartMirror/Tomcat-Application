@@ -8,17 +8,11 @@
         <id name="id">
             <column name="id" sql-type="int(11)"/>
         </id>
-        <property name="userId">
-            <column name="user_id" sql-type="int(11)" not-null="true"/>
-        </property>
         <property name="picture">
             <column name="picture" sql-type="longblob"/>
         </property>
         <property name="timeStamp">
             <column name="time_stamp" sql-type="timestamp"/>
         </property>
-        <many-to-one name="usersByUserId" class="com.lookingglass.model.UsersEntity">
-            <column name="user_id" not-null="true"/>
-        </many-to-one>
     </class>
 </hibernate-mapping>

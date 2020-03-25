@@ -3,6 +3,7 @@ package com.lookingglass.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public class ProgramsEntity {
     private Integer id;
     private String name;
-    private Collection<ProgramParametersEntity> programParametersById;
+    private Collection<ProgramParametersEntity> programParametersById = new ArrayList<>();
     private UsersEntity usersByUserId;
 
     public ProgramsEntity()
