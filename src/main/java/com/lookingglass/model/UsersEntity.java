@@ -13,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -22,9 +23,9 @@ import java.util.stream.Stream;
 public class UsersEntity {
     private Integer id;
     private String label;
-    private Collection<PicturesEntity> picturesById = new ArrayList<>();
-    private Collection<ProgramsEntity> programsById = new ArrayList<>();
-    private Collection<UsersParametersEntity> usersParametersById = new ArrayList<>();
+    private Collection<PicturesEntity> picturesById = new HashSet<>();
+    private Collection<ProgramsEntity> programsById = new HashSet<>();
+    private Collection<UsersParametersEntity> usersParametersById = new HashSet<>();
     private Gson gson = new GsonBuilder()
             .disableHtmlEscaping()
             .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)

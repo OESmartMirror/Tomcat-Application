@@ -1,7 +1,10 @@
 
-psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø§«˜8‘¤£Õ.
-dsquid:S1126S"AReplace this if-then-else statement by a single return statement.(­«•šşÿÿÿÿ8ºì‰ ı-
-usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—®œËÿÿÿÿÿ8ºì‰ ı-
-psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø§«˜8‘¤£Õ.
-psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø§«˜8‘¤£Õ.
-usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—®œËÿÿÿÿÿ8ºì‰ ı-
+c
+java:S1126P"AReplace this if-then-else statement by a single return statement.(­«•šşÿÿÿÿ8ìØÀ‘.
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”í‚¸8ìØÀ‘.
+X
+java:S1172";Remove this unused method parameter "_programsByProgramId".(”í‚¸8ìØÀ‘.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—®œËÿÿÿÿÿ8ìØÀ‘.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—®œËÿÿÿÿÿ8ìØÀ‘.
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”í‚¸8ìØÀ‘.
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”í‚¸8ìØÀ‘.

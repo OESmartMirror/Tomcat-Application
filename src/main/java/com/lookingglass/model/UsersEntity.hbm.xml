@@ -7,6 +7,7 @@
     <class name="com.lookingglass.model.UsersEntity" table="users" schema="datatable">
         <id name="id">
             <column name="id" sql-type="int(11)"/>
+            <generator class="native" />
         </id>
         <property name="label">
             <column name="label" sql-type="varchar(20)" length="20"/>

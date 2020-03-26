@@ -7,6 +7,7 @@
     <class name="com.lookingglass.model.ProgramsEntity" table="programs" schema="datatable">
         <id name="id">
             <column name="id" sql-type="int(11)"/>
+            <generator class="native" />
         </id>
         <property name="name">
             <column name="name" sql-type="varchar(50)" length="50"/>

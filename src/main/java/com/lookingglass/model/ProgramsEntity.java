@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 @Entity
@@ -12,7 +13,7 @@ import java.util.List;
 public class ProgramsEntity {
     private Integer id;
     private String name;
-    private Collection<ProgramParametersEntity> programParametersById = new ArrayList<>();
+    private Collection<ProgramParametersEntity> programParametersById = new HashSet<>();
     private UsersEntity usersByUserId;
 
     public ProgramsEntity()
