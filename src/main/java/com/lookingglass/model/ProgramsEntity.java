@@ -35,6 +35,7 @@ public class ProgramsEntity {
     {
         if(!this.programParametersById.contains(_parameter))
         {
+            _parameter.setProgramsByProgramId(this);
             this.programParametersById.add(_parameter);
         }
     }
@@ -44,6 +45,7 @@ public class ProgramsEntity {
         ProgramParametersEntity temp = new ProgramParametersEntity(_paramName,_paramValue);
         if (!this.programParametersById.contains(temp))
         {
+            temp.setProgramsByProgramId(this);
             this.programParametersById.add(temp);
         }
     }
@@ -54,6 +56,7 @@ public class ProgramsEntity {
         {
             if (!this.programParametersById.contains(param))
             {
+                param.setProgramsByProgramId(this);
                 this.programParametersById.add(param);
             }
         }

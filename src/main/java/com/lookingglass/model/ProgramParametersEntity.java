@@ -97,7 +97,7 @@ public class ProgramParametersEntity {
         return programsByProgramsId;
     }
 
-    public void setProgramsByProgramId(ProgramsEntity usersByUserId) {
-        this.programsByProgramsId = usersByUserId;
+    public void setProgramsByProgramId(ProgramsEntity programsByProgramsId) {
+        this.programsByProgramsId = programsByProgramsId;
     }
 }

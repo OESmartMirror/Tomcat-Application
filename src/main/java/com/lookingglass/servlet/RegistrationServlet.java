@@ -1,6 +1,7 @@
 package com.lookingglass.servlet;
 
 import com.lookingglass.model.UsersEntity;
+import com.lookingglass.model.UsersParametersEntity;
 import com.lookingglass.utils.HibernateUtil;
 import com.lookingglass.utils.Utils;
 import org.hibernate.Session;
@@ -52,7 +53,14 @@ public class RegistrationServlet extends HttpServlet
             }
             finally
             {
-                if(null != session) session.save(tempUser);
+                if(null != session)
+                {
+                    session.saveOrUpdate(tempUser);
+                    for(UsersParametersEntity usp : tempUser.getUsersParametersById())
+                    {
+                        session.saveOrUpdate(usp);
+                    }
+                }
             }
         }
         catch (Exception e)

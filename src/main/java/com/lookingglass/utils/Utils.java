@@ -10,14 +10,14 @@ import java.nio.file.Files;
 public class Utils
 {
 
-    private static org.apache.log4j.Logger log = Logger.getLogger(Utils.class);
+    //private static org.apache.log4j.Logger log = Logger.getLogger(Utils.class);
 
     private Utils ()
     {
 
     }
 
-    public static void logTrace(String _text)
+    /*public static void logTrace(String _text)
     {
         log.trace("Trace message!");
         log.trace(_text);
@@ -51,7 +51,7 @@ public class Utils
         log.fatal("Trace message!");
         log.fatal(_text);
     }
-
+*/
 
     public static byte[] loadImgToByteArray(String path) throws IOException {
         File fi = new File(path);

@@ -42,6 +42,7 @@ public class UsersEntity {
     {
         this.label = String.valueOf(Math.abs(_email.hashCode()));
         UsersParametersEntity temp = new UsersParametersEntity("E-mail",_email);
+        temp.setUsersByUserId(this);
         this.usersParametersById.add(temp);
     }
 
@@ -54,6 +55,7 @@ public class UsersEntity {
     {
         if (!this.picturesById.contains(_picture))
         {
+            _picture.setUsersByUserId(this);
             this.picturesById.add(_picture);
         }
     }
@@ -64,6 +66,7 @@ public class UsersEntity {
         {
             if (this.picturesById.contains(pic))
             {
+                pic.setUsersByUserId(this);
                 this.picturesById.add(pic);
             }
         }
@@ -77,7 +80,11 @@ public class UsersEntity {
             for(String str : result)
             {
                 PicturesEntity temp = new PicturesEntity(Utils.loadImgToByteArray(_pathOfFolder.concat("//").concat(str)));
-                if(!this.picturesById.contains(temp)) this.picturesById.add(temp);
+                if(!this.picturesById.contains(temp))
+                {
+                    temp.setUsersByUserId(this);
+                    this.picturesById.add(temp);
+                }
             }
         } catch (IOException e)
         {
@@ -89,6 +96,7 @@ public class UsersEntity {
     {
         if (!this.usersParametersById.contains(_parameter))
         {
+            _parameter.setUsersByUserId(this);
             this.usersParametersById.add(_parameter);
         }
     }
@@ -98,6 +106,7 @@ public class UsersEntity {
         UsersParametersEntity temp = new UsersParametersEntity(_paramName,_paramValue);
         if (!this.usersParametersById.contains(temp))
         {
+            temp.setUsersByUserId(this);
             this.usersParametersById.add(temp);
         }
     }
@@ -108,6 +117,7 @@ public class UsersEntity {
         {
             if (!this.usersParametersById.contains(param))
             {
+                param.setUsersByUserId(this);
                 this.usersParametersById.add(param);
             }
         }
@@ -131,6 +141,7 @@ public class UsersEntity {
     {
         if (!this.programsById.contains(_program))
         {
+            _program.setUsersByUserId(this);
             this.programsById.add(_program);
         }
     }
@@ -141,6 +152,7 @@ public class UsersEntity {
         {
             if (!this.programsById.contains(prog))
             {
+                prog.setUsersByUserId(this);
                 this.programsById.add(prog);
             }
         }
@@ -151,6 +163,7 @@ public class UsersEntity {
         ProgramsEntity temp = new ProgramsEntity(_programName);
         if(!this.programsById.contains(temp))
         {
+            temp.setUsersByUserId(this);
             this.programsById.add(temp);
         }
     }
