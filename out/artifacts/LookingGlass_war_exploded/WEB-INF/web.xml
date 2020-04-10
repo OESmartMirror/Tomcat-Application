@@ -11,4 +11,13 @@
         <servlet-name>Registration servlet</servlet-name>
         <url-pattern>/registration</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Query servlet</servlet-name>
+        <servlet-class>com.lookingglass.servlet.QueryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Query servlet</servlet-name>
+        <url-pattern>/query</url-pattern>
+    </servlet-mapping>
 </web-app>

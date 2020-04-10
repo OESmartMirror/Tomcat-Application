@@ -1,5 +1,6 @@
 package com.lookingglass.model;
 
+import com.google.gson.annotations.Expose;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -11,8 +12,11 @@ import java.util.List;
 @Entity
 @Table(name = "programs", schema = "datatable")
 public class ProgramsEntity {
+    @Expose
     private Integer id;
+    @Expose
     private String name;
+    @Expose
     private Collection<ProgramParametersEntity> programParametersById = new HashSet<>();
     private UsersEntity usersByUserId;
 

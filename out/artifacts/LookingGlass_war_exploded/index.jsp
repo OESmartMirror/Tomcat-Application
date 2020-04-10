@@ -14,6 +14,7 @@
 
   <button onclick="<% System.out.println("Bszom az anyád, ha nem vagy képes működni.");%>">BASZATÁS</button>
   <a href="registration.jsp" class="btn btn-info" role="button">Regisztráció</a>
+  <a href="query.jsp" class="btn btn-info" role="button">Query</a>
 
 
   <body>

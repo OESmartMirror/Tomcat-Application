@@ -34,7 +34,7 @@
 
 <head>
     <title>Regisztráció</title>
-    <form class="form-horizontal" name="registrationFrom" method="get" action="registration">
+    <form class="form-horizontal" name="registrationFrom" method="post" action="registration">
         <fieldset>
 
             <!-- Form Name -->

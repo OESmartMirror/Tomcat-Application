@@ -3,6 +3,7 @@ package com.lookingglass.model;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.Expose;
 import com.lookingglass.utils.Utils;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -21,12 +22,17 @@ import java.util.stream.Stream;
 @Entity
 @Table(name = "users", schema = "datatable")
 public class UsersEntity {
+    @Expose
     private Integer id;
+    @Expose
     private String label;
     private Collection<PicturesEntity> picturesById = new HashSet<>();
+    @Expose
     private Collection<ProgramsEntity> programsById = new HashSet<>();
+    @Expose
     private Collection<UsersParametersEntity> usersParametersById = new HashSet<>();
     private Gson gson = new GsonBuilder()
+            .excludeFieldsWithoutExposeAnnotation()
             .disableHtmlEscaping()
             .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
             .setPrettyPrinting()

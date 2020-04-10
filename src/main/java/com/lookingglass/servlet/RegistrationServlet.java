@@ -66,6 +66,7 @@ public class RegistrationServlet extends HttpServlet
         catch (Exception e)
         {
             e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         catch (Error err)
         {
