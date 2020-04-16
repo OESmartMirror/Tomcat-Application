@@ -23,15 +23,57 @@ public class QueryServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     {
-        String queryLabel = getParameter("label", request);
+        String queryLabel = getParameterRequired("label", request);
+        String param = getParameter("param", request);
+        /*String justPictures = getParameter("justPictures", request);
+        String justUserParameters = getParameter("justUserParameters", request);
+        String justPrograms = getParameter("justPrograms", request);*/
+        //user by label
+        //pictures by user labal
+        //user parameter by id
+        //program parameter by id
+        //új tábla a módosítások kezeléséhez, ha ebben vaj label, akkor történt módosítás a tükör queryzik, aztán kiveszi belőle
+        //ha van változás, akkor amióta került bevezetésre új tensor azt felrakja a db-be
+        //új tensorokat egy jsonbe elküldeni és az berakni a db-be
+        //új servlet a tensorok fogadására cheksummal
+
+        //Kellene egy olyan ami az összes label-t visszaadja ezt a lookupba kellene megcsinálni ha van label paraméter és üres string akkor minde user jsonjét adja vissza!!!!
+
         PrintWriter pwout = null;
         Session hibSession = HibernateUtil.getSession();
+        //Valami kifinomultabb megoldás kell majd ide, talán valami olyasmi ami a contextel együtt felépül
+        LookUp.initAll();
         try
         {
-            UsersEntity temp = LookUp.User(queryLabel,hibSession);
-            String tempJson = temp.userAsJson();
-            response.setContentType("application/json;charset=UTF-8");
+            UsersEntity temp = null;
             pwout = response.getWriter();
+            String tempJson = null;
+            if(null != param && "justUserParameters".equals(param))
+            {
+                temp = LookUp.User(queryLabel,hibSession);
+                tempJson = temp.usersParametersAsJson();
+            }
+            else if(null != param && "justPrograms".equals(param))
+            {
+                temp = LookUp.User(queryLabel,hibSession);
+                tempJson = temp.usersProgramsAsJson();
+            }
+            else if(null != param && "justPictures".equals(param))
+            {
+                temp = LookUp.User(queryLabel,hibSession);
+                tempJson = temp.usersPicturseAsJson();
+            }
+            else if(!"".equals(queryLabel))
+            {
+                temp = LookUp.User(queryLabel,hibSession);
+                tempJson = temp.userAsJson();
+            }
+            else
+            {
+                tempJson = LookUp.AllUserAsJson();
+            }
+
+            response.setContentType("application/json;charset=UTF-8");
             pwout.println(tempJson);
             System.out.println(tempJson);
         }
@@ -55,20 +97,23 @@ public class QueryServlet extends HttpServlet
         doPost(request,response);
     }
 
+    private String getParameterRequired(String paramName,HttpServletRequest request ) throws NullPointerException
+    {
+        String temp = null;
+        temp = request.getParameter(paramName);
+        if(null == temp)
+        {
+            throw new NullPointerException(new StringBuilder().append("Missing parameter: ").append(temp).toString());
+        }
+        return temp;
+    }
+
     private String getParameter(String paramName,HttpServletRequest request )
     {
         String temp = null;
-        try
+        if(null != request.getParameter(paramName))
         {
             temp = request.getParameter(paramName);
-            if(null == temp)
-            {
-                throw new NullPointerException(new StringBuilder().append("Missing parameter: ").append(paramName).toString());
-            }
-        }
-        catch (NullPointerException ex)
-        {
-            //TODO create response so user sees what missing
         }
         return temp;
     }

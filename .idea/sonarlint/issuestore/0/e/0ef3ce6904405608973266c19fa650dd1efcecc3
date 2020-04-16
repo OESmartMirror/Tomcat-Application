@@ -1,0 +1,53 @@
+
+[	java:S106°"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8™ŠØğ–.
+d
+java:S1226Í"AIntroduce a new variable instead of reusing the parameter "temp".(ó³éËıÿÿÿÿ8¡ıí–.
+k	java:S100ú"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Šú¦Ú8™ŠØğ–.
+F
+java:S1148˜"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¡ıí–.
+F
+java:S1148‡"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8™ŠØğ–.
+k	java:S100Ô"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î‡ğœ8¡ıí–.
+p	java:S100²"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èıÚıùÿÿÿÿ8¡ıí–.
+i	java:S100}"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñº 8¡ıí–.
+^	java:S125„"<This block of commented-out lines of code should be removed.(›ã¿¾ÿÿÿÿÿ8Øä¨î–.
+F
+java:S1148ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8™ŠØğ–.
+F
+java:S1148Ã"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8™ŠØğ–.
+F
+java:S1148×"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8™ŠØğ–.
+g
+java:S1226§"DIntroduce a new variable instead of reusing the parameter "results".(¯ïáêûÿÿÿÿ8¡ıí–.
+[	java:S106Š"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8¡ıí–.
+[	java:S106™"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8¡ıí–.
+j	java:S100¶"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½„ù:8™ŠØğ–.
+[	java:S106Ä"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8™ŠØğ–.
+[	java:S106Ø"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8™ŠØğ–.
+p	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼Å§ãøÿÿÿÿ8¡ıí–.
+[	java:S106Ø"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8™ŠØğ–.
+k	java:S100æ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óß†8¡ıí–.
+[	java:S106Ä"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8™ŠØğ–.
+[	java:S106œ"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8™ŠØğ–.
+[	java:S106œ"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8™ŠØğ–.
+p	java:S100¢"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù…§êüÿÿÿÿ8™ŠØğ–.
+[	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8™ŠØğ–.
+F
+java:S1148ß"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¡ıí–.
+F
+java:S1148‰"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¡ıí–.
+F
+java:S1148›"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8™ŠØğ–.
+[	java:S106ô"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8™ŠØğ–.
+k	java:S100Ê"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËòÌü8™ŠØğ–.
+F
+java:S1148¯"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8™ŠØğ–.
+W
+java:S1118":Add a private constructor to hide the implicit public one.(‚ëÁø8İ¹úí–.
+[	java:S106à"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8¡ıí–.
+F
+java:S1148½"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¡ıí–.
+[	java:S106ô"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8™ŠØğ–.
+[	java:S106¾"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8¡ıí–.
+[	java:S106°"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8™ŠØğ–.
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŸöòU8™ŠØğ–.

@@ -24,7 +24,6 @@ public class RegistrationServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     {
-
         Session session = null;
         Transaction tx = null;
         UsersEntity tempUser = null;

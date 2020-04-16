@@ -76,6 +76,8 @@ public class HibernateUtil
         {
             reconnect();
         }
+        //nem ide kellene, de most jó lesz itt
+        //LookUp.initAll();
         return session;
     }
 

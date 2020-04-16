@@ -4,10 +4,15 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 import com.lookingglass.utils.Utils;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -136,6 +141,13 @@ public class UsersEntity {
         return temp;
     }
 
+    public UsersParametersEntity getParameterById(Integer id)
+    {
+        UsersParametersEntity temp = new UsersParametersEntity();
+        temp = this.usersParametersById.stream().filter( param -> id.equals(param.getId())).findAny().orElse(null);
+        return temp;
+    }
+
     public String returnUsersPassword()
     {
         return getParameterByName("password").getParameterValue();
@@ -188,6 +200,10 @@ public class UsersEntity {
     {
         return gson.toJson(this.programsById);
     }
+
+    public String usersPicturseAsJson(){return gson.toJson(this.picturesById);}
+
+
 
     @Id
     @GeneratedValue(

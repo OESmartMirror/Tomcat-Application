@@ -1,16 +1,32 @@
 package com.lookingglass.utils;
 
+import com.google.gson.*;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+import com.lookingglass.model.UsersEntity;
 import org.apache.log4j.Logger;
 import org.mindrot.jbcrypt.BCrypt;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Utils
 {
 
     //private static org.apache.log4j.Logger log = Logger.getLogger(Utils.class);
+
+    private static Gson gson = new GsonBuilder()
+            .disableHtmlEscaping()
+            .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+            .setPrettyPrinting()
+            .serializeNulls()
+            .create();;
 
     private Utils ()
     {
@@ -53,7 +69,8 @@ public class Utils
     }
 */
 
-    public static byte[] loadImgToByteArray(String path) throws IOException {
+    public static byte[] loadImgToByteArray(String path) throws IOException
+    {
         File fi = new File(path);
         return Files.readAllBytes(fi.toPath());
     }
@@ -68,6 +85,41 @@ public class Utils
         return BCrypt.checkpw(_pw,_hash);
     }
 
+    public static String getListAsJson(List<UsersEntity> passedList)
+    {
+        String returnString = null;
+        List<JsonObject> tempJsonObjects = new ArrayList<JsonObject>();
+        passedList.stream().forEach
+         (
+            li ->
+            {
+                JsonElement tempElement = gson.fromJson(li.userAsJson(),JsonElement.class);
+                JsonObject tempObject = tempElement.getAsJsonObject();
+                tempJsonObjects.add(tempObject);
+            }
+        );
+        returnString = gson.toJson(tempJsonObjects);
+        return returnString;
+    }
 
+    public static BufferedImage generateQRCodeImage(String barcodeText) throws Exception
+    {
+        QRCodeWriter barcodeWriter = new QRCodeWriter();
+        BitMatrix bitMatrix =
+                barcodeWriter.encode(barcodeText, BarcodeFormat.QR_CODE, 400, 400);
+        return MatrixToImageWriter.toBufferedImage(bitMatrix);
+    }
+
+    public static BufferedImage getUserQRCodeRegistern(UsersEntity user) throws Exception
+    {
+        String temp = "Register:".concat(user.getLabel());
+        return generateQRCodeImage(temp);
+    }
+
+    public static BufferedImage getUserQRCodeLogin(UsersEntity user) throws Exception
+    {
+        String temp = "User:".concat(user.getLabel());
+        return generateQRCodeImage(temp);
+    }
 
 }

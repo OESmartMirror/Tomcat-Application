@@ -1,10 +1,11 @@
 
-usquid:S001171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­âì¬ıÿÿÿÿ8öäµ ı-
-psquid:S00117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹ö°´8öäµ ı-
-osquid:S00117B"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä”L8¤£Õ.
-usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ ã°ÿÿÿÿÿ8şÇ² ı-
-usquid:S00117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıŠÅşÿÿÿÿ8öäµ ı-
-psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»ºÂŠ8öäµ ı-
-osquid:S00117B"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä”L8¤£Õ.
-osquid:S00117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓíÖm8öäµ ı-
-usquid:S00117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â™¥çÿÿÿÿÿ8¤£Õ.
+>
+java:S1116"Remove this empty statement.(ŒğÍıÿÿÿÿ8€üÊï–.
+{
+java:S2293["YReplace the type specification in this constructor call with the diamond operator ("<>").(Â¥¾†ıÿÿÿÿ8ª°Œî–.
+l	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä”L8ğÌ‡î–.
+r	java:S117N"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â™¥çÿÿÿÿÿ8ğÌ‡î–.
+l	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä”L8ğÌ‡î–.
+b	java:S112i"FDefine and throw a dedicated exception instead of using a generic one.(¸·Íˆ8ù˜ª——.
+]	java:S125"<This block of commented-out lines of code should be removed.(Å…Æùÿÿÿÿ8ğÌ‡î–.
+]	java:S125%"<This block of commented-out lines of code should be removed.(ÒÌâ–øÿÿÿÿ8ğÌ‡î–.

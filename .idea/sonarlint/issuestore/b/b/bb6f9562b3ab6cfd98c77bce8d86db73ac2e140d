@@ -1,8 +1,8 @@
 
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°­ò‘ûÿÿÿÿ8êØÀ‘.
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¡äôşÿÿÿÿ8êØÀ‘.
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°­ò‘ûÿÿÿÿ8êØÀ‘.
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°­ò‘ûÿÿÿÿ8êØÀ‘.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¡äôşÿÿÿÿ8êØÀ‘.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°­ò‘ûÿÿÿÿ8êØÀ‘.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¡äôşÿÿÿÿ8êØÀ‘.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°­ò‘ûÿÿÿÿ8êØÀ‘.
 c
-java:S1126Q"AReplace this if-then-else statement by a single return statement.(­«•šşÿÿÿÿ8êØÀ‘.
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¡äôşÿÿÿÿ8êØÀ‘.
+java:S1126U"AReplace this if-then-else statement by a single return statement.(­«•šşÿÿÿÿ8êØÀ‘.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°­ò‘ûÿÿÿÿ8êØÀ‘.

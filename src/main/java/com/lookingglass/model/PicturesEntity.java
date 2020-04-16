@@ -14,6 +14,17 @@ public class PicturesEntity {
     private Timestamp timeStamp;
     private UsersEntity usersByUserId;
 
+    //filenév alapján törlés
+    //név alappján kép letöltés
+    //képfeltöltés
+    //képeket egyben zipbe? összes kép
+    //külön adatbázis tábla ha történt változás az adott ebmernél akkor bekerül ide a lablje és tudni lehet, hogy mit kell tenni
+
+    //program és program | user paraméáterek beállítása
+
+    //tükrös regisztráció
+    //{Register | User} : {Label} módon kellene
+
     public PicturesEntity()
     {
 

@@ -1,0 +1,24 @@
+
+Z	java:S106S"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8»îÙÊ–.
+Y
+java:S25893"7Remove this expression which always evaluates to "true"(Ëøøÿÿÿÿ8•„’ğ–.
+†
+java:S1130d"iRemove the declaration of thrown exception 'java.lang.NullPointerException' which is a runtime exception.(Èµã®8»îÙÊ–.
+Z	java:S106N"9Replace this use of System.out or System.err by a logger.(±‡äÍùÿÿÿÿ8»îÙÊ–.
+X	java:S125"<This block of commented-out lines of code should be removed.(ã·–…8©Äğ–.
+n
+java:S1989+"XHandle the following exception that could be thrown by "getSession": HibernateException.(™¼Á×
+N
+java:S1144o"1Remove this unused private "getParameter" method.(®òğ‡8©Äğ–.
+`
+java:S2259X"CA "NullPointerException" could be thrown; "pwout" is nullable here.(Ã®Û8•„’ğ–.
+T
+java:S2589="7Remove this expression which always evaluates to "true"(Û«œÍ8•„’ğ–.
+†
+java:S1989"dHandle the following exception that could be thrown by "getParameterRequired": NullPointerException.(‡Çà¨şÿÿÿÿ8€àÅÃ–.
+Y
+java:S25898"7Remove this expression which always evaluates to "true"(ğÍËúùÿÿÿÿ8•„’ğ–.
+E
+java:S1148R"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ºîÙÊ–.
+
+java:S1989"dHandle the following exception that could be thrown by "getParameterRequired": NullPointerException.(ËçÄç8øÊğ–.
