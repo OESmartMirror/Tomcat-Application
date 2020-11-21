@@ -9,10 +9,12 @@ import com.lookingglass.model.UsersEntity;
 import org.apache.log4j.Logger;
 import org.mindrot.jbcrypt.BCrypt;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,11 @@ public class Utils
             .setPrettyPrinting()
             .serializeNulls()
             .create();;
+
+    private static String webAppRoot = System.getProperty("catalina.base");
+    private static String s = File.separator;
+    private static String usersDir = webAppRoot + s + "users" + s;
+    private static String tempDir = Paths.get(System.getProperty("java.io.tmpdir") )+ s + "users" + s;
 
     private Utils ()
     {
@@ -102,24 +109,152 @@ public class Utils
         return returnString;
     }
 
-    public static BufferedImage generateQRCodeImage(String barcodeText) throws Exception
+    /*public static BufferedImage generateQRCodeImage(String barcodeText) throws Exception
     {
         QRCodeWriter barcodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix =
                 barcodeWriter.encode(barcodeText, BarcodeFormat.QR_CODE, 400, 400);
         return MatrixToImageWriter.toBufferedImage(bitMatrix);
+    }*/
+
+    public static BufferedImage generateQRCodeImage(String barcodeText)
+    {
+        QRCodeWriter barcodeWriter = new QRCodeWriter();
+        BitMatrix bitMatrix = null;
+        try
+        {
+            bitMatrix = barcodeWriter.encode(barcodeText, BarcodeFormat.QR_CODE, 400, 400);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            System.err.println(e);
+        }
+
+        return MatrixToImageWriter.toBufferedImage(bitMatrix);
     }
 
-    public static BufferedImage getUserQRCodeRegistern(UsersEntity user) throws Exception
+    public static BufferedImage getUserQRCodeRegisternImg(UsersEntity user) throws Exception
     {
         String temp = "Register:".concat(user.getLabel());
         return generateQRCodeImage(temp);
     }
 
-    public static BufferedImage getUserQRCodeLogin(UsersEntity user) throws Exception
+    public static BufferedImage getUserQRCodeLoginImg(UsersEntity user) throws Exception
     {
         String temp = "User:".concat(user.getLabel());
         return generateQRCodeImage(temp);
+    }
+
+    public static void getUserQRCodeRegister(UsersEntity user)
+{
+    String temp = "Register:".concat(user.getLabel());
+    try {
+        BufferedImage tempImage = generateQRCodeImage(temp);
+        File outputFile = new File(usersDir + user.getLabel().concat(File.separator).concat("register.png"));
+        ImageIO.write(tempImage, "png", outputFile);
+    }
+    catch (IOException e)
+    {
+        e.printStackTrace();
+        System.out.println(e.getMessage());
+        System.err.println(e);
+    }
+}
+
+    public static void getUserQRCodeLogin(UsersEntity user){
+        String temp = "User:".concat(user.getLabel());
+        try {
+            BufferedImage tempImage = generateQRCodeImage(temp);
+            File outputFile = new File(usersDir + user.getLabel().concat(File.separator).concat("login.png"));
+            ImageIO.write(tempImage, "png", outputFile);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            System.err.println(e);
+        }
+    }
+
+    public static File getUserQRCodeRegisterAsFile(UsersEntity user)
+    {
+        String temp = "Register:".concat(user.getLabel());
+        //createFolder(user);
+        createFolderTemp(user);
+        File outputFile = null;
+        try {
+            BufferedImage tempImage = generateQRCodeImage(temp);
+            //outputFile = new File(usersDir + user.getLabel().concat(File.separator).concat("register.png"));
+            outputFile = new File(tempDir + user.getLabel().concat(File.separator).concat("register.png"));
+            ImageIO.write(tempImage, "png", outputFile);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            System.err.println(e);
+        }
+        return outputFile;
+    }
+
+    public static File getUserQRCodeLoginAsFile(UsersEntity user)
+    {
+        String temp = "User:".concat(user.getLabel());
+        //createFolder(user);
+        createFolderTemp(user);
+        File outputFile = null;
+        try {
+            BufferedImage tempImage = generateQRCodeImage(temp);
+            //outputFile = new File(usersDir + user.getLabel().concat(File.separator).concat("login.png"));
+            outputFile = new File(tempDir + user.getLabel().concat(File.separator).concat("login.png"));
+            ImageIO.write(tempImage, "png", outputFile);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            System.err.println(e);
+        }
+        return outputFile;
+    }
+
+
+
+
+    public static void createQRIMG(UsersEntity user)
+    {
+        getUserQRCodeRegister(user);
+        getUserQRCodeLogin(user);
+    }
+
+    public static void createFolder(UsersEntity user)
+    {
+        File path = new File(usersDir.concat(user.getLabel()));
+        try
+        {
+            Files.createDirectories(path.toPath());
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            System.out.println(e.getMessage());System.err.println(e);
+        }
+    }
+
+    public static void createFolderTemp(UsersEntity user)
+    {
+        File path = new File(tempDir.concat(user.getLabel()));
+        try
+        {
+            Files.createDirectories(path.toPath());
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            System.out.println(e.getMessage());System.err.println(e);
+        }
     }
 
 }

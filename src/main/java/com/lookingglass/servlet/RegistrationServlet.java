@@ -36,19 +36,21 @@ public class RegistrationServlet extends HttpServlet
                     tx = session.beginTransaction();
                     try
                     {
-                        tempUser = new UsersEntity(getParameter("email",request));
-                        tempUser.addParameter("firstName",getParameter("firstName",request));
-                        tempUser.addParameter("lastName",getParameter("lastName",request));
-                        tempUser.addParameter("password", Utils.getPasswordHash(getParameter("password",request)));
+                        tempUser = new UsersEntity(ServletUtils.getParameterRequired("email",request));
+                        tempUser.addParameter("firstName", ServletUtils.getParameterRequired("firstName",request));
+                        tempUser.addParameter("lastName", ServletUtils.getParameterRequired("lastName",request));
+                        tempUser.addParameter("password", Utils.getPasswordHash(ServletUtils.getParameterRequired("password",request)));
                     }
                     catch (Exception e3)
                     {
                         e3.printStackTrace();
+                        System.out.println(e3.getMessage());
                     }
             }
             catch (Exception e2)
             {
                 e2.printStackTrace();
+                System.out.println(e2.getMessage());
             }
             finally
             {
@@ -78,11 +80,6 @@ public class RegistrationServlet extends HttpServlet
             if(null != tx) tx.commit();
             if(null != session) session.close();
         }
-
-
-
-
-
     }
 
     @Override
@@ -91,21 +88,4 @@ public class RegistrationServlet extends HttpServlet
         doPost(request,response);
     }
 
-    private String getParameter(String paramName,HttpServletRequest request )
-    {
-        String temp = null;
-        try
-        {
-            temp = request.getParameter(paramName);
-            if(null == temp)
-            {
-                throw new NullPointerException(new StringBuilder().append("Missing parameter: ").append(paramName).toString());
-            }
-        }
-        catch (NullPointerException ex)
-        {
-            //TODO create response so user sees what missing
-        }
-        return temp;
-    }
 }

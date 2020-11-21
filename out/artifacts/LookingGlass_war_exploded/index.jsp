@@ -16,6 +16,8 @@
   <a href="registration.jsp" class="btn btn-info" role="button">Regisztráció</a>
   <a href="query.jsp" class="btn btn-info" role="button">Query</a>
   <a href="upload.jsp" class="btn btn-info" role="button">Upload</a>
+  <a href="qrcode.jsp" class="btn btn-info" role="button">QRCode</a>
+  <a href="cache.jsp" class="btn btn-info" role="button">Cache</a>
 
 
   <body>

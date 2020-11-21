@@ -1,11 +1,53 @@
 
+m
+java:S1192Œ"JDefine a constant instead of duplicating this literal "Register:" 3 times.(’ ú¾øÿÿÿÿ8òç‰ó˜.
+F
+java:S1148 "#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8©Å‰ó˜.
+r	java:S117U"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â™¥çÿÿÿÿÿ8ğÌ‡î–.
+[	java:S106ò"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8ÔìÖñ˜.
+F
+java:S1148ÿ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8º¶“ô˜.
+]	java:S125q"<This block of commented-out lines of code should be removed.(ÒÌâ–øÿÿÿÿ8¨ÙÖñ˜.
+Y	java:S125Í"<This block of commented-out lines of code should be removed.(Å¶Š³8ò•ô˜.
+^	java:S125Ò"<This block of commented-out lines of code should be removed.( Âã“ÿÿÿÿÿ8­­†ô˜.
+[	java:S106¢"9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ8©Å‰ó˜.
+F
+java:S1148‚"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÔìÖñ˜.
+F
+java:S1148ñ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÔìÖñ˜.
+[	java:S106±"9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ8©Å‰ó˜.
+[	java:S106Ä"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8òç‰ó˜.
+l	java:S117Z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä”L8ğÌ‡î–.
+[	java:S106ò"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8ÔìÖñ˜.
 >
-java:S1116"Remove this empty statement.(ŒğÍıÿÿÿÿ8€üÊï–.
+java:S1116"Remove this empty statement.(ŒğÍıÿÿÿÿ8€üÊï–.
+[	java:S106Ú"9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ8òç‰ó˜.
+]	java:S125"<This block of commented-out lines of code should be removed.(Å…Æùÿÿÿÿ8ğÌ‡î–.
+[	java:S106°"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8©Å‰ó˜.
+F
+java:S1148¯"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8©Å‰ó˜.
+
+java:S1130Š"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(²µÃúùÿÿÿÿ8ÔìÖñ˜.
+F
+java:S1148Ø"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8òç‰ó˜.
+[	java:S106€"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8º¶“ô˜.
+[	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ÔìÖñ˜.
 {
-java:S2293["YReplace the type specification in this constructor call with the diamond operator ("<>").(Â¥¾†ıÿÿÿÿ8ª°Œî–.
-l	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä”L8ğÌ‡î–.
-r	java:S117N"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â™¥çÿÿÿÿÿ8ğÌ‡î–.
-l	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä”L8ğÌ‡î–.
-b	java:S112i"FDefine and throw a dedicated exception instead of using a generic one.(¸·Íˆ8ù˜ª——.
-]	java:S125"<This block of commented-out lines of code should be removed.(Å…Æùÿÿÿÿ8ğÌ‡î–.
-]	java:S125%"<This block of commented-out lines of code should be removed.(ÒÌâ–øÿÿÿÿ8ğÌ‡î–.
+java:S2293b"YReplace the type specification in this constructor call with the diamond operator ("<>").(Â¥¾†ıÿÿÿÿ8ª°Œî–.
+[	java:S106Ù"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8òç‰ó˜.
+[	java:S106€"9Replace this use of System.out or System.err by a logger.(Ì­çûÿÿÿÿ8º¶“ô˜.
+h	java:S112Š"FDefine and throw a dedicated exception instead of using a generic one.(²µÃúùÿÿÿÿ8ÔìÖñ˜.
+c	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‹Èİ«8ÔìÖñ˜.
+[	java:S106„"9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ8ÔìÖñ˜.
+i
+java:S1192’"FDefine a constant instead of duplicating this literal "User:" 3 times.(à¦ˆ¦ûÿÿÿÿ8òç‰ó˜.
+[	java:S106Å"9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ8òç‰ó˜.
+^	java:S125½"<This block of commented-out lines of code should be removed.(‘ëÉ’øÿÿÿÿ8­­†ô˜.
+l	java:S117Z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä”L8ğÌ‡î–.
+Š
+java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(‹Èİ«8ÔìÖñ˜.
+[	java:S106¡"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8©Å‰ó˜.
+]	java:S125,"<This block of commented-out lines of code should be removed.(ÒÌâ–øÿÿÿÿ8ğÌ‡î–.
+F
+java:S1148Ã"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8òç‰ó˜.
+Y	java:S125¸"<This block of commented-out lines of code should be removed.(Å¶Š³8½ú™ô˜.

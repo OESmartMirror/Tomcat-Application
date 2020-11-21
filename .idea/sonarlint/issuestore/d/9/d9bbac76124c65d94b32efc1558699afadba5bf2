@@ -1,0 +1,21 @@
+
+\
+java:S1161":Add the "@Override" annotation above this method signature(ˆõÒØşÿÿÿÿ8Ôä¼ò˜.
+o
+java:S1989M"MHandle the following exception that could be thrown by "doPost": IOException.(³æ£õùÿÿÿÿ8¯¸ó˜.
+u
+java:S1989"XHandle the following exception that could be thrown by "getSession": HibernateException.(™¼Á×8Ş¿¥ó˜.
+a
+java:S2583-"DChange this condition so that it does not always evaluate to "false"(äáÄø8ïµ°ó˜.
+l	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ¥íp8÷å“ó˜.
+E
+java:S1148?"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¹š²ó˜.
+]	java:S125"<This block of commented-out lines of code should be removed.(ßğï÷ıÿÿÿÿ8Ş¿¥ó˜.
+b
+java:S2259E"@A "NullPointerException" could be thrown; "os" is nullable here.(„¨‡Òûÿÿÿÿ8Èäµó˜.
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Šİ·18¿‡æò˜.
+n
+java:S1989E"LHandle the following exception that could be thrown by "flush": IOException.(„¨‡Òûÿÿÿÿ8Èäµó˜.
+i
+java:S1989F"LHandle the following exception that could be thrown by "close": IOException.(œñÑ8Èäµó˜.
+Z	java:S106@"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8¹š²ó˜.

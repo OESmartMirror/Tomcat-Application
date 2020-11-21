@@ -1,0 +1,37 @@
+
+W
+java:S1161.":Add the "@Override" annotation above this method signature(‹¨¯¿8ë™¾ù˜.
+Q
+java:S1128"4Remove this unused import 'javax.servlet.http.Part'.(ó•™¬8 ã÷˜.
+{	java:S115,"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ø£ ‚ıÿÿÿÿ8ë™¾ù˜.
+W
+java:S1141r"5Extract this nested try block into a separate method.(ç£êúÿÿÿÿ8ëûÀù˜.
+@
+java:S1148x"#Use a logger to log this exception.(şìÓ’8ëûÀù˜.
+Z	java:S106y"9Replace this use of System.out or System.err by a logger.(Ò¦›¢ÿÿÿÿÿ8ëûÀù˜.
+k
+java:S1128"NRemove this unused import 'org.apache.commons.fileupload.FileUploadException'.(Ş¨8ë™¾ù˜.
+m
+java:S19893"PHandle the following exception that could be thrown by "getWriter": IOException.(×–·›8ë™¾ù˜.
+k
+java:S1128"IRemove this unused import 'com.lookingglass.model.UsersParametersEntity'.(»ÃÙúÿÿÿÿ8ë™¾ù˜.
+]
+java:S1161":Add the "@Override" annotation above this method signature(½œ•Æşÿÿÿÿ8ëûÀù˜.
+u
+java:S1989E"XHandle the following exception that could be thrown by "getSession": HibernateException.(™¼Á×8ë™¾ù˜.
+{
+java:S2293S"YReplace the type specification in this constructor call with the diamond operator ("<>").(±Ü·­ıÿÿÿÿ8ë™¾ù˜.
+E
+java:S1148~"#Use a logger to log this exception.(‰œ‰Õúÿÿÿÿ8ëûÀù˜.
+e
+java:S2259–"HA "NullPointerException" could be thrown; "hibSession" is nullable here.(ã¹Î68ëûÀù˜.
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ºÅ¿ù˜.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(á½‹¾úÿÿÿÿ8ëûÀù˜.
+W
+java:S1141o"5Extract this nested try block into a separate method.(ç£êúÿÿÿÿ8ëûÀù˜.
+ƒ
+java:S1989Ÿ"`Handle the following exceptions that could be thrown by "doPost": ServletException, IOException.(³æ£õùÿÿÿÿ8ëûÀù˜.
+
+java:S1989—"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÙÏÃˆ8ëûÀù˜.
+]	java:S125C"<This block of commented-out lines of code should be removed.(ÙŠÙıÿÿÿÿ8ë™¾ù˜.

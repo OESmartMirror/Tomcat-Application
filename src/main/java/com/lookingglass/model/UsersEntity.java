@@ -36,6 +36,8 @@ public class UsersEntity {
     private Collection<ProgramsEntity> programsById = new HashSet<>();
     @Expose
     private Collection<UsersParametersEntity> usersParametersById = new HashSet<>();
+
+    private Collection<UpdateQueueEntity> usersUpdateQueueById = new HashSet<>();
     private Gson gson = new GsonBuilder()
             .excludeFieldsWithoutExposeAnnotation()
             .disableHtmlEscaping()
@@ -101,6 +103,13 @@ public class UsersEntity {
         {
             e.printStackTrace();
         }
+    }
+
+    public void addUpdateQueueItem()
+    {
+        UpdateQueueEntity temp = new UpdateQueueEntity();
+        temp.setUsersByUserId(this);
+        this.usersUpdateQueueById.add(temp);
     }
 
     public void addParameter(UsersParametersEntity _parameter)
@@ -278,5 +287,13 @@ public class UsersEntity {
 
     public void setUsersParametersById(Collection<UsersParametersEntity> usersParametersById) {
         this.usersParametersById = usersParametersById;
+    }
+    @OneToMany(mappedBy = "usersByUserId")
+    public Collection<UpdateQueueEntity> getUsersUpdateQueueById() {
+        return usersUpdateQueueById;
+    }
+    public void setUsersUpdateQueueById(Collection<UpdateQueueEntity> usersUpdateQueueById)
+    {
+        this.usersUpdateQueueById = usersUpdateQueueById;
     }
 }

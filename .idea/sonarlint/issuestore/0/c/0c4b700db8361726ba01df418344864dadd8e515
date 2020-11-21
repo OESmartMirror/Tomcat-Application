@@ -1,8 +1,8 @@
 
-W
-java:S1172'"5Remove this unused method parameter "_usersByUserId".(ÿ´İŞşÿÿÿÿ8ëØÀ‘.
-r	java:S117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ´İŞşÿÿÿÿ8ëØÀ‘.
-r	java:S117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ´İŞşÿÿÿÿ8ëØÀ‘.
-l	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕÜëf8ëØÀ‘.
 c
 java:S1126\"AReplace this if-then-else statement by a single return statement.(÷½œóûÿÿÿÿ8ëØÀ‘.
+W
+java:S1172'"5Remove this unused method parameter "_usersByUserId".(ÿ´İŞşÿÿÿÿ8ëØÀ‘.
+l	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕÜëf8ëØÀ‘.
+r	java:S117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ´İŞşÿÿÿÿ8ëØÀ‘.
+r	java:S117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ´İŞşÿÿÿÿ8ëØÀ‘.

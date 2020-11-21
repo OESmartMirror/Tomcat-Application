@@ -51,6 +51,8 @@ public class LookUp
             String label = user.getLabel();
             usersByIdCache.put(tempId,user);
             usersByLabelCache.put(label,user);
+            Utils.createFolder(user);
+            Utils.createQRIMG(user);
         }
     }
 
@@ -175,14 +177,21 @@ public class LookUp
         return results;
     }
 
-    public static UsersEntity User(String label)
+    public static UsersEntity User(String _label)
     {
-        UsersEntity temp = usersByLabelCache.getOrDefault(label,null);
+        UsersEntity temp = usersByLabelCache.getOrDefault(_label,null);
         if(null == temp)
         {
             try
             {
-                temp = getUsersEntity(label, temp, hibSession);
+                temp = getUsersEntity(_label, temp, hibSession);
+                if(null != temp)
+                {
+                    Integer tempId = temp.getId();
+                    String label = temp.getLabel();
+                    usersByIdCache.put(tempId,temp);
+                    usersByLabelCache.put(label,temp);
+                }
             }
             catch (Exception e)
             {
@@ -209,14 +218,38 @@ public class LookUp
         return temp;
     }
 
-    public static UsersEntity User(String label, Session hibSession)
+    public  static UpdateQueueEntity getUpdateQueueEntity(Integer userId,Session hibSession)
     {
-        UsersEntity temp = usersByLabelCache.getOrDefault(label,null);
+        UpdateQueueEntity temp = null;
+        CriteriaBuilder criteriaBuilder = hibSession.getCriteriaBuilder();
+        CriteriaQuery<UpdateQueueEntity> criteriaQuery = criteriaBuilder.createQuery(UpdateQueueEntity.class);
+        Root<UpdateQueueEntity> root = criteriaQuery.from(UpdateQueueEntity.class);
+        //criteriaQuery.select(root).where(criteriaBuilder.equal(root.get("label"),label));
+        criteriaQuery.select(root).where(criteriaBuilder.equal(root.get("usersByUserId"),userId));
+        Query<UpdateQueueEntity> query = hibSession.createQuery(criteriaQuery);
+        List<UpdateQueueEntity> results = query.getResultList();
+        if(!results.isEmpty())
+        {
+            temp = results.get(0);
+        }
+        return  temp;
+    }
+
+    public static UsersEntity User(String _label, Session hibSession)
+    {
+        UsersEntity temp = usersByLabelCache.getOrDefault(_label,null);
         if(null == temp)
         {
             try
             {
-                temp = getUsersEntity(label, temp, hibSession);
+                temp = getUsersEntity(_label, temp, hibSession);
+                if(null != temp)
+                {
+                    Integer tempId = temp.getId();
+                    String label = temp.getLabel();
+                    usersByIdCache.put(tempId,temp);
+                    usersByLabelCache.put(label,temp);
+                }
             }
             catch (Exception e)
             {

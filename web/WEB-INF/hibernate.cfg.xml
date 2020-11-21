@@ -23,6 +23,8 @@
     <mapping resource="com/lookingglass/model/UsersEntity.hbm.xml"/>
     <mapping class="com.lookingglass.model.UsersParametersEntity"/>
     <mapping resource="com/lookingglass/model/UsersParametersEntity.hbm.xml"/>
+    <mapping class="com.lookingglass.model.UpdateQueueEntity"/>
+    <mapping resource="com/lookingglass/model/UpdateQueueEntity.hbm.xml"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

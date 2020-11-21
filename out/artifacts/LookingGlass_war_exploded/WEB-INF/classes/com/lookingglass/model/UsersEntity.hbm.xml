@@ -30,5 +30,11 @@
             </key>
             <one-to-many not-found="ignore" class="com.lookingglass.model.UsersParametersEntity"/>
         </set>
+        <set name="usersUpdateQueueById" inverse="true">
+            <key>
+                <column name="user_id"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.lookingglass.model.UpdateQueueEntity"/>
+        </set>
     </class>
 </hibernate-mapping>

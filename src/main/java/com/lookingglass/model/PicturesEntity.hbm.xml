@@ -15,5 +15,8 @@
         <property name="timeStamp">
             <column name="time_stamp" sql-type="timestamp"/>
         </property>
+        <many-to-one name="usersByUserId" class="com.lookingglass.model.UsersEntity">
+            <column name="user_id"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

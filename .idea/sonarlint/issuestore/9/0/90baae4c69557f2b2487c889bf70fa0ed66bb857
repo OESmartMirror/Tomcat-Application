@@ -1,14 +1,14 @@
 
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÖã°8äØÀ‘.
+r	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íùÍÈùÿÿÿÿ8äØÀ‘.
+W
+java:S1172!"5Remove this unused method parameter "_usersByUserId".(÷£Òìÿÿÿÿÿ8äØÀ‘.
+c
+java:S1126i"AReplace this if-then-else statement by a single return statement.(¡«èÂüÿÿÿÿ8äØÀ‘.
 m	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”Ş¥š8äØÀ‘.
 M
 java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8°íùÂ‘.
-W
-java:S1172!"5Remove this unused method parameter "_usersByUserId".(÷£Òìÿÿÿÿÿ8äØÀ‘.
 m	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”Ş¥š8äØÀ‘.
 r	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷£Òìÿÿÿÿÿ8äØÀ‘.
-r	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷£Òìÿÿÿÿÿ8äØÀ‘.
 r	java:S1179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êÄ¸¨úÿÿÿÿ8äØÀ‘.
-r	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íùÍÈùÿÿÿÿ8äØÀ‘.
-c
-java:S1126i"AReplace this if-then-else statement by a single return statement.(¡«èÂüÿÿÿÿ8äØÀ‘.
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÖã°8äØÀ‘.
+r	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷£Òìÿÿÿÿÿ8äØÀ‘.

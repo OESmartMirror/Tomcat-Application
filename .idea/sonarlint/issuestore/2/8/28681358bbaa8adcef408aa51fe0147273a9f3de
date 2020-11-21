@@ -1,38 +1,38 @@
 
-_
-java:S1126ô"AReplace this if-then-else statement by a single return statement.(üáÓ†8çØÀ‘.
-V
-java:S1854’"8Remove this useless assignment to local variable "temp".(È„×ø8ä¨——.
-r	java:S117j"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬õÚñüÿÿÿÿ8ä¨——.
-j
-java:S1128"MRemove this unused import 'com.google.zxing.client.j2se.MatrixToImageWriter'.(ı¯ÒÀ8úŞ©——.
-m	java:S1174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÊÑ8ä¨——.
+E
+java:S1148h"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó„€°›.
+n	java:S117¼"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ªø¾8ó„€°›.
+s	java:S117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÊïûÿÿÿÿ8ó„€°›.
 [
 java:S1128"9Remove this unused import 'java.awt.image.BufferedImage'.(×íĞ‡şÿÿÿÿ8úŞ©——.
+s	java:S117§"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹ä…ûùÿÿÿÿ8ó„€°›.
+s	java:S117°"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£™‡¢úÿÿÿÿ8ó„€°›.
+]
+java:S1128";Remove this unused import 'com.google.zxing.BarcodeFormat'.(Â«Â¯ıÿÿÿÿ8úŞ©——.
 A
-java:S26766"Use the original value instead.(ù¯¥µüÿÿÿÿ8ä¨——.
-r	java:S117A"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆØ–›şÿÿÿÿ8ä¨——.
-m	java:S117s"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï´×¢8ä¨——.
-n	java:S117³"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ªø¾8ä¨——.
-s	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÊïûÿÿÿÿ8ä¨——.
-m	java:S117s"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï´×¢8ä¨——.
+java:S26768"Use the original value instead.(ù¯¥µüÿÿÿÿ8ä¨——.
+m	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÊÑ8ä¨——.
+m	java:S117X"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤×ù8ó„€°›.
+r	java:S117C"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆØ–›şÿÿÿÿ8ó„€°›.
+r	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ÚØàıÿÿÿÿ8ó„€°›.
+V
+java:S1854”"8Remove this useless assignment to local variable "temp".(È„×ø8ó„€°›.
+s	java:S117†"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Š÷üÿÿÿÿ8ó„€°›.
+_
+java:S1126ı"AReplace this if-then-else statement by a single return statement.(üáÓ†8çØÀ‘.
+r	java:S117s"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬õÚñüÿÿÿÿ8ó„€°›.
+[
+java:S1128	">Remove this unused import 'com.google.zxing.common.BitMatrix'.(¯©“8úŞ©——.
+j
+java:S1128"MRemove this unused import 'com.google.zxing.client.j2se.MatrixToImageWriter'.(ı¯ÒÀ8úŞ©——.
+m	java:S117|"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï´×¢8ó„€°›.
 ]
 java:S1128
 "ARemove this unused import 'com.google.zxing.qrcode.QRCodeWriter'.(õÙÕ.8úŞ©——.
-m	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤×ù8ä¨——.
-s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹ä…ûùÿÿÿÿ8ä¨——.
-r	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ÚØàıÿÿÿÿ8ä¨——.
-r	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Š÷üÿÿÿÿ8ä¨——.
-]
-java:S1128";Remove this unused import 'com.google.zxing.BarcodeFormat'.(Â«Â¯ıÿÿÿÿ8úŞ©——.
 V
-java:S1854‹"8Remove this useless assignment to local variable "temp".(È„×ø8ä¨——.
+java:S1854›"8Remove this useless assignment to local variable "temp".(È„×ø8ó„€°›.
+m	java:S117|"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï´×¢8ó„€°›.
 M
 java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ä¨——.
-[
-java:S1128	">Remove this unused import 'com.google.zxing.common.BitMatrix'.(¯©“8úŞ©——.
-s	java:S117§"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£™‡¢úÿÿÿÿ8ä¨——.
-E
-java:S1148f"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ä¨——.
 
-java:S1186<"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÑºËú8ä¨——.
+java:S1186>"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÑºËú8ä¨——.

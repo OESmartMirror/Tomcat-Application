@@ -23,8 +23,8 @@ public class QueryServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     {
-        String queryLabel = getParameterRequired("label", request);
-        String param = getParameter("param", request);
+        String queryLabel = ServletUtils.getParameterRequired("label", request);
+        String param = ServletUtils.getParameter("param", request);
         /*String justPictures = getParameter("justPictures", request);
         String justUserParameters = getParameter("justUserParameters", request);
         String justPrograms = getParameter("justPrograms", request);*/
@@ -97,24 +97,5 @@ public class QueryServlet extends HttpServlet
         doPost(request,response);
     }
 
-    private String getParameterRequired(String paramName,HttpServletRequest request ) throws NullPointerException
-    {
-        String temp = null;
-        temp = request.getParameter(paramName);
-        if(null == temp)
-        {
-            throw new NullPointerException(new StringBuilder().append("Missing parameter: ").append(temp).toString());
-        }
-        return temp;
-    }
 
-    private String getParameter(String paramName,HttpServletRequest request )
-    {
-        String temp = null;
-        if(null != request.getParameter(paramName))
-        {
-            temp = request.getParameter(paramName);
-        }
-        return temp;
-    }
 }
